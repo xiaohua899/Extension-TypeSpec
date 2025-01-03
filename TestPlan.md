@@ -19,19 +19,17 @@ Install TypeSpec Compiler before starting to write TypeSpec.
 
 The TypeSpec Extension aims to provide end-to-end TypeSpec support for non-branded services, covering the following test cases:
 
-* Install the typespec extension
-* Create TypeSpec Project
+* Create TypeSpec Project from A Template
 * Generate Client Code from TypeSpec
 * Generate OpenAPI 3.x from TypeSpec
 * Generate Server Stub from TypeSpec
+* Import TypeSpec from OpenAPI3 _(stretch goal for SE)_
 
 ## Test Steps
 
-### Typespec expansion on Windows
+### Step 1: Install the typespec extension.
 
-#### Test Cases 1: Install the typespec extension
-
-**Option 1**. Install using .vsix file.
+_Option 1_. Install using .vsix file: 
    `Extension` -> `…` -> `Install form VSIX...`
    
    ![alt text](./image/InstallTypespec_VSIX.png)
@@ -40,12 +38,14 @@ The TypeSpec Extension aims to provide end-to-end TypeSpec support for non-brand
    
    ![alt text](./image/InstallTypespec_SelectVSIXFile.png)
 
-**Option 2**. Install typespec with vscode extension marketplace:
+_Option 2_. Install typespec with vscode extension marketplace:
    `Extension` -> input `typespec` -> Install
    
    ![alt text](./image/InstallTypespec_ExtensionMarketplace.png)
 
-#### Test Cases 2: Create TypeSpec Project
+### Step 2: Create TypeSpec Project
+
+#### Test Case 1: Create TypeSpec Project from A Template
 
 New TypeSpec projects can be created using a variety of templates for specific purposes. TypeSpec supports the following non-branded templates:
 
@@ -60,36 +60,30 @@ Selecting a template involves:
 * Initializing essential project files with a specified folder structure
 * Configuring output settings for a designated emission purpose
 
-##### **Trigger create TypeSpec Project**
+##### Step 1: Trigger create TypeSpec Project
 
-**Option 1**. Clicking “Create TypeSpec Project” button/link in the “No Folder Opened” View of Explore.
+_Option 1_. Clicking “Create TypeSpec Project” button/link in the “No Folder Opened” View of Explore.
    
    ![alt text](./image/TriggerCreateTypeSpecProject_NoFolderOpened.png)
 
-**Option 2**. Typing `> TypeSpec: Create TypeSpec Project` in the _Command Palette_.
+_Option 2_. Typing `> TypeSpec: Create TypeSpec Project` in the _Command Palette_.
    
    ![alt text](./image/TriggerCreateTypeSpecProject_CommandPalette.png)
 
-##### Create TypeSpec Project Steps
-
-1. Typing `>TypeSpec: Create TypeSpec Project` in the _Command Palette_.
-
-   **Validate:** It should display the corresponding commands `>TypeSpec: Create TypeSpec Project`.
-   
-   ![alt text](./image/TriggerCreateTypeSpecProject_CommandPalette.png)
-
-2. Select an empty folder as the root folder for the new TypeSpec project.
+##### Step 2. Select an empty folder as the root folder for the new TypeSpec project.
    
    ![alt text](./image/CreateTypeSpecProject_SelectFolder.png)
 
-3. If the TypeSpec Compiler is not installed, the Quick Pick will initiate the installation of the TypeSpec Compiler. If TypeSpec Compiler is installed, Skip to the next step.
+##### Step 3. Check if TypeSpec Compiler CLI is installed.
+
+If the TypeSpec Compiler is not installed, the Quick Pick will initiate the installation of the TypeSpec Compiler. If TypeSpec Compiler is installed, Skip to the next step.
    
    ![alt text](./image/CreateTypeSpecProject_InstallTypeSpecCompiler.png)
 
-4. After successfully installing TypeSpec Compiler, will go through the questions of `tsp init`.
+##### Step 4. After successfully installing TypeSpec Compiler, will go through the questions of `tsp init`.
    1. If the specified folder is not empty. If the folder is empty, skip to the next step.
 
-     **Validate:** Will it appear: `Folder C:\xxx\xxx\xxx is not empty. Are you sure you want to initialize a new project here?`
+   **Validate:** Will it appear: `Folder C:\xxx\xxx\xxx is not empty. Are you sure you want to initialize a new project here?`
 
    2. Select a template.
 
@@ -99,7 +93,9 @@ Selecting a template involves:
 
    4. Choose whether to generate a .ignore file. `Y/N`
 
-#### Test Cases 3: Generate Client Code from TypeSpec
+### Step 3： Generate from TypeSpec
+
+#### Test Cases 1: Generate Client Code from TypeSpec
 
 Generate client code from TypeSpec. In VS Code extension, we can complete code generation with step-by-step guidance.  
 TypeSpec Extension support will be extended to client code generation for first-class languages: `.NET`, `Python`, `Java`, and `JavaScript`.
@@ -112,146 +108,116 @@ TypeSpec Extension support will be extended to client code generation for first-
 * Python 3.8 or above
 * Node.js 20 LTS or above
 
-##### Trigger generate from TypeSpec
+##### Step 1: Trigger generate from TypeSpec
 
 Generation from a TypeSpec can be triggered in two ways:
 
-**Option 1**. Clicking `Generate from TypeSpec` in the _Context Menu_ for a .tsp file in the extended TypeSpec project.
+_Option 1_. Clicking `Generate from TypeSpec` in the _Context Menu_ for a .tsp file in the extended TypeSpec project.
    
    ![alt text](./image/TriggerGeneratefromTypeSpec_ContextMenu.png)
 
-**Option 2**. Typing `>TypeSpec: Generate from TypeSpec` in the _Command Palette_ with at least a TypeSpec project folder extended in the _Side Bar_.
+_Option 2_. Typing `>TypeSpec: Generate from TypeSpec` in the _Command Palette_ with at least a TypeSpec project folder extended in the _Side Bar_.
    
    ![alt text](./image/TriggerGeneratefromTypeSpec_CommandPalette.png)
 
-##### Generate Client Code steps
-
-1. Input `> TypeSpec: Generate from Typespec`.
-
-   **Validate:** It should display the corresponding commands `TypeSpec: Generate from Typespec`.
-
-   ![alt text](./image/TriggerGeneratefromTypeSpec_CommandPalette.png)
-
-2. Click the command `TypeSpec: Generate from TypeSpec`, and choose a project.
+##### Step 2: Click the command `TypeSpec: Generate from TypeSpec`, and choose a project.
 
    **Validate:** There should be a prompt "Select a Typespec Project".
 
    ![alt text](./image/GeneratefromTypeSpec_SelectTypespecProject.png)
 
-3. Select an Emitter Type.
+##### Step 3: Select an Emitter Type.
 
    **Validate:** There should be a prompt "Select an Emitter Type", and should see three emitter types: `Client Code`, `<PREVIEW> Server Stub`, `Protocal Schema`.
 
    ![alt text](./image/GeneratefromTypeSpec_SelectEmitter_client.png)
 
-4. Click `Client Code`.
+##### Step 4: Click `Client Code`.
 
    **Validate:** There should be a prompt "Select a Language", and should see four languages: `DotNet`, `Java`, `JavaScript`, `Python`.
 
    ![alt text](./image/GeneratefromTypeSpec_SelectClientLanguage.png)
 
-5. Select a Language, the TypeSpec to client code generation is initiated at the back end.
+##### Step 5: Select a Language, the TypeSpec to client code generation is initiated at the back end.
 
    **Validate:** The result appears as a Notification in the bottom right corner, and generate the client folder.
 
    ![alt text](./image/GeneratefromTypeSpec_GenerateClientResult_prompt.png)
    ![alt text](./image/GeneratefromTypeSpec_GenerateClientResult_Folder.png)
 
-#### Test Cases 4: Generate OpenAPI 3.x from TypeSpec
+#### Test Cases 2: Generate OpenAPI 3.x from TypeSpec
 
 Emit OpenAPI3 from TypeSpec to automate API-related tasks: generate API documentation, test API, etc.
 The TypeSpec file itself is not sufficient to generate OpenAPI 3. The conversion process will always reference the entry point (main.tsp) of the TypeSpec build, which includes the main definitions of models, services, and operations.
 
-##### Generate OpenAPI 3.x steps
+##### Step1-3 are the same as Tast Case 1.
 
-1. Input `>TypeSpec: Generate from Typespec`.
-
-   **Validate:** It should display the corresponding commands `TypeSpec: Generate from Typespec`.
-
-   ![alt text](./image/TriggerGeneratefromTypeSpec_CommandPalette.png)
-
-2. Click the command `TypeSpec: Generate from TypeSpec`, and choose a project.
-
-   **Validate:** There should be a prompt "Select a Typespec Project".
-
-   ![alt text](./image/GeneratefromTypeSpec_SelectTypespecProject.png)
-
-3. Select an Emitter Type.
-
-   **Validate:** There should be a prompt "Select an Emitter Type", and should see three emitter types: `Client Code`, `<PREVIEW> Server Stub`, `Protocal Schema`.
-
-   ![alt text](./image/GeneratefromTypeSpec_SelectEmitter_OpenAPI.png)
-
-4. Click `Protocal Schema`.
+##### Step 4: Click `Protocal Schema`.
 
    **Validate:** There should be a prompt "Select a Language", and should see languages: `OpenAPI3`.
 
    ![alt text](./image/GeneratefromTypeSpec_SelectOpenAPILanguage.png)
 
-5. Select a Language, the TypeSpec to OpenAPI generation is initiated at the back end.
+##### Step 5: Select a Language, the TypeSpec to OpenAPI generation is initiated at the back end.
 
    **Validate:** The result appears as a Notification in the bottom right corner, and generate the schema folder.
 
    ![alt text](./image/GeneratefromTypeSpec_GenerateOpenAPIResult_prompt.png)
    ![alt text](./image/GeneratefromTypeSpec_GenerateOpenAPIResult_Folder.png)
 
-#### Test Cases 5: Generate Server Stub from TypeSpec
+#### Test Cases 3: Generate Server Stub from TypeSpec
 
 The service stub generation support will be PREVIEWED for 2 languages: `.NET` and `JavaScript`.
 > Note: Server Stub Emitter is currently under PREVIEW.
 
-##### Generate Server Stub steps
+##### Step1-3 are the same as Tast Case 1.
 
-1. Input `>TypeSpec: Generate from Typespec`.
-
-   **Validate:** It should display the corresponding commands `TypeSpec: Generate from Typespec`.
-   
-   ![alt text](./image/TriggerGeneratefromTypeSpec_CommandPalette.png)
-
-2. Click the command `TypeSpec: Generate from TypeSpec`, and choose a project.
-
-   **Validate:** There should be a prompt "Select a Typespec Project".
-
-   ![alt text](./image/GeneratefromTypeSpec_SelectTypespecProject.png)
-
-3. Select an Emitter Type.
-
-   **Validate:** There should be a prompt "Select an Emitter Type", and should see three emitter types: `Client Code`, `<PREVIEW> Server Stub`, `Protocal Schema`.
-
-   ![alt text](./image/GeneratefromTypeSpec_SelectEmitter_ServerStub.png)
-
-4. Click `<PREVIEW> Server Stub`.
+##### Step 4: Click `<PREVIEW> Server Stub`.
 
    **Validate:** There should be a prompt "Select a Language", and should see two languages: `DotNet`, `JavaScript`.
 
    ![alt text](./image/GeneratefromTypeSpec_SelectServerStubLanguage.png)
 
-5. Select a Language, the TypeSpec to Server Stub generation is initiated at the back end.
+##### Step 5: Select a Language, the TypeSpec to Server Stub generation is initiated at the back end.
 
    **Validate:** The result appears as a Notification in the bottom right corner, and generate the server folder.
 
    ![alt text](./image/GeneratefromTypeSpec_GenerateServerStubResult_prompt.png)
    ![alt text](./image/GeneratefromTypeSpec_GenerateServerStubResult_Folder.png)
+   
+
+### Step 5: Import TypeSpec from OpenAPI3 _(stretch goal for SE)_
+
+With the TypeSpec emitter for OpenAPI3, users can import a TypeSpec file from a designated OpenAPI3 document. While it is possible to repeatedly convert OpenAPI3 to TypeSpec, we do not recommend this approach.
+
+#### Test Cases 1: Import TypeSpec from OpenAPI3
+
+##### Step 1: "Import TypeSpec from OpenAPI 3.0" from the right-click context menu of a .tsp file.
+
+##### Step 2: Identify the project folder where you will place the TypeSpec file converted from the specified OpenAPI3 specification.
+
+##### Step 3: Specify the OpenAPI3 specification to convert.
+
+##### Step 4: Verify that @typespec/http and @typespec/openapi3 are installed.
 
 ## Issue Report
 
 When an error is detected, it’s necessary to document the findings by using the following form:
 
-| Title | Emitter Type | Language | Issue Description | Repro Steps | Expected Results | Actual Results | Comments |
-|  --------------- | :-: | :--: | :--: | :--: | :--: | :--: | :--: |
-| e.g. Generate client code from typespec failed | client code | Python |  |  |  |  | Issue link |
-| e.g. Create typespec project failed | N/N | N/N | Create project feature is not supported by the current TypeSpec Compiler (ver <= 0.63.0). Please upgrade TypeSpec Compiler and try again. | 1. Typing `>TypeSpec: Create TypeSpec Project` in the _Command Palette_. <br> 2. Select an empty folder as the root folder for the new TypeSpec project. <br> 3. Select a template. | There should be a prompt "Select a template", and should see four options: `Empty project`, `Generic REST API`, `TypeSpec Library (With TypeScript)`, `TypeSpec Emitter (With TypeScript)`. | Create project feature is not supported by the current TypeSpec Compiler (ver <= 0.63.0). Please upgrade TypeSpec Compiler and try again. | Issue link |
+| No | Title | Emitter Type | Language | Issue Description | Repro Steps | Expected Results | Actual Results | Comments |
+| ---------| :--: | :-: | :--: | :--: | :--: | :--: | :--: | :--: |
+| 1 | e.g. Generate client code from typespec failed | client code | Python |  |  |  |  | Issue link |
+| 2 | e.g. Create typespec project failed | N/A | N/A | Create project feature is not supported by the current TypeSpec Compiler (ver <= 0.63.0). Please upgrade TypeSpec Compiler and try again. | 1. Typing `>TypeSpec: Create TypeSpec Project` in the _Command Palette_. <br> 2. Select an empty folder as the root folder for the new TypeSpec project. <br> 3. Select a template. | There should be a prompt "Select a template", and should see four options: `Empty project`, `Generic REST API`, `TypeSpec Library (With TypeScript)`, `TypeSpec Emitter (With TypeScript)`. | Create project feature is not supported by the current TypeSpec Compiler (ver <= 0.63.0). Please upgrade TypeSpec Compiler and try again. | Issue link |
 
 ## Test Results Summary
 
 The test results will be presented in the following form:
 
-| NO | Test Cases | Language | Result | Issues | Status | Comments |
-|  --------------- | :-: | :--: | :--: | :--: | :--: | :--: |
-| 1 | Install the typespec extension | N/N | PASS | No issue | Done |  |
-| 2 | Create TypeSpec Project | N/N | FAIL | Issue links | Done |  |
-| 3 | Generate Client Code from TypeSpec | Python | PASS | No issue | Done |  |
-| 4 |  | Java | FAIL | Issue links | Done |  |
-| 5 |  | .NET | FAIL | Issue links | Done |  |
-| 6 |  | JavaScript | PASS | No issue | Done |  |
-| 7 | Generate Server Stub steps | DotNet |  |  | Doing |  |
+| NO | Test Cases | Language | Result | Issues  | Comments |
+|  --------------- | :-: | :--: | :--: | :--: | :--: |
+| 1 | Create TypeSpec Project from A Template | N/A | PASS | No issue | |
+| 3 | Generate Client Code from TypeSpec | Python | PASS | No issue |  |
+| 4 | Generate Client Code from TypeSpec | Java | FAIL | Issue links |  |
+| 5 | Generate Client Code from TypeSpec | .NET | FAIL | Issue links |  |
+| 6 | Generate Client Code from TypeSpec | JavaScript | PASS | No issue |   |
+| 7 | Generate Server Stub steps | DotNet |  |  |  |
