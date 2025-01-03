@@ -11,7 +11,7 @@
 
 Install TypeSpec Compiler before starting to write TypeSpec.
 
-* Node.js 20 LTS or above
+* [Node.js 20+](https://nodejs.org/download/)
 * Npm 7+
 * Install TypeSpec Compiler CLI: `"npm install -g @typespec/compiler"`
 
@@ -100,11 +100,11 @@ TypeSpec Extension support will be extended to client code generation for first-
 
 #### Install the required tools when Generate Client Code
 
-* Install required SDK/runtime for executing the specified language
-* .NET 8.0 SDK or above
+Install required SDK/runtime for executing the specified language:
+* [.NET 8.0 SDK](https://dotnet.microsoft.com/en-us/download)
 * Java 11 or above, and Maven
-* Python 3.8 or above
-* Node.js 20 LTS or above
+* [Python 3.8+](https://www.python.org/downloads/)
+* [Node.js 20+](https://nodejs.org/download/)
 
 #### Step 1 are the same as Tast Case 1.
 
