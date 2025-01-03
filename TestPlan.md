@@ -36,7 +36,7 @@ _Option 1_. Install using .vsix file:
 
    Find the .vsix file you want to install locally.
    
-   ![alt text](./image/InstallTypespec_SelectVSIXFile.png)
+   ![alt text](./image/InstallTypeSpec_SelectVSIXFile.png)
 
 _Option 2_. Install typespec with vscode extension marketplace:
    `Extension` -> input `typespec` -> Install
