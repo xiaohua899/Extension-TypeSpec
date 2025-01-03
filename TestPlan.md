@@ -40,7 +40,7 @@ The TypeSpec Extension aims to provide end-to-end TypeSpec support for non-brand
    
    ![alt text](./image/InstallTypespec_SelectVSIXFile.png)
 
-**Option 2**. Install typespec with vscode extension marketplace.
+**Option 2**. Install typespec with vscode extension marketplace:
    `Extension` -> input `typespec` -> Install
    
    ![alt text](./image/InstallTypespec_ExtensionMarketplace.png)
@@ -60,7 +60,7 @@ Selecting a template involves:
 * Initializing essential project files with a specified folder structure
 * Configuring output settings for a designated emission purpose
 
-##### Trigger create TypeSpec Project
+##### **Trigger create TypeSpec Project**
 
 **Option 1**. Clicking “Create TypeSpec Project” button/link in the “No Folder Opened” View of Explore.
    
