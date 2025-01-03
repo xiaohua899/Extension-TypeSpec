@@ -19,11 +19,11 @@ Install TypeSpec Compiler before starting to write TypeSpec.
 
 The TypeSpec Extension aims to provide end-to-end TypeSpec support for non-branded services, covering the following test cases:
 
-* Create TypeSpec Project from A Template
-* Generate Client Code from TypeSpec
-* Generate OpenAPI 3.x from TypeSpec
-* Generate Server Stub from TypeSpec
-* Import TypeSpec from OpenAPI3 _(stretch goal for SE)_
+1. [Create TypeSpec Project from A Template](#test-case-1-create-typespec-project-from-a-template)
+2. [Generate Client Code from TypeSpec](#test-cases-2-generate-client-code-from-typespec)
+3. [Generate OpenAPI 3.x from TypeSpec](#test-cases-3-generate-openapi-3x-from-typespec)
+4. [Generate Server Stub from TypeSpec](#test-cases-4-generate-server-stub-from-typespec)
+5. [Import TypeSpec from OpenAPI3 _(stretch goal for SE)_](#test-cases-5-import-typespec-from-openapi3-stretch-goal-for-se)
 
 ## Test Steps
 
@@ -96,6 +96,8 @@ If the TypeSpec Compiler is not installed, the Quick Pick will initiate the inst
 Generate client code from TypeSpec. In VS Code extension, we can complete code generation with step-by-step guidance.  
 TypeSpec Extension support will be extended to client code generation for first-class languages: `.NET`, `Python`, `Java`, and `JavaScript`.
 
+**Important: There must be at least one TypeSpec project in the project folder.**
+
 #### Install the required tools when Generate Client Code
 
 * Install required SDK/runtime for executing the specified language
@@ -104,7 +106,9 @@ TypeSpec Extension support will be extended to client code generation for first-
 * Python 3.8 or above
 * Node.js 20 LTS or above
 
-#### Step 1: Trigger generate from TypeSpec
+#### Step 1 are the same as Tast Case 1.
+
+#### Step 2: Trigger generate from TypeSpec
 
 Generation from a TypeSpec can be triggered in two ways:
 
@@ -116,25 +120,25 @@ _Option 2_. Typing `>TypeSpec: Generate from TypeSpec` in the _Command Palette_ 
    
    ![alt text](./image/TriggerGeneratefromTypeSpec_CommandPalette.png)
 
-#### Step 2: Click the command `TypeSpec: Generate from TypeSpec`, and choose a project.
+#### Step 3: Click the command `TypeSpec: Generate from TypeSpec`, and choose a project.
 
    **Validate:** There should be a prompt "Select a Typespec Project".
 
    ![alt text](./image/GeneratefromTypeSpec_SelectTypespecProject.png)
 
-#### Step 3: Select an Emitter Type.
+#### Step 4: Select an Emitter Type.
 
    **Validate:** There should be a prompt "Select an Emitter Type", and should see three emitter types: `Client Code`, `<PREVIEW> Server Stub`, `Protocal Schema`.
 
    ![alt text](./image/GeneratefromTypeSpec_SelectEmitter_client.png)
 
-#### Step 4: Click `Client Code`.
+#### Step 5: Click `Client Code`.
 
    **Validate:** There should be a prompt "Select a Language", and should see four languages: `DotNet`, `Java`, `JavaScript`, `Python`.
 
    ![alt text](./image/GeneratefromTypeSpec_SelectClientLanguage.png)
 
-#### Step 5: Select a Language, the TypeSpec to client code generation is initiated at the back end.
+#### Step 6: Select a Language, the TypeSpec to client code generation is initiated at the back end.
 
    **Validate:** The result appears as a Notification in the bottom right corner, and generate the client folder.
 
@@ -146,15 +150,17 @@ _Option 2_. Typing `>TypeSpec: Generate from TypeSpec` in the _Command Palette_ 
 Emit OpenAPI3 from TypeSpec to automate API-related tasks: generate API documentation, test API, etc.
 The TypeSpec file itself is not sufficient to generate OpenAPI 3. The conversion process will always reference the entry point (main.tsp) of the TypeSpec build, which includes the main definitions of models, services, and operations.
 
-#### Step1-3 are the same as Tast Case 2.
+#### Step 1 are the same as Tast Case 1.
 
-#### Step 4: Click `Protocal Schema`.
+#### Step 2-4 are the same as Tast Case 2.
+
+#### Step 5: Click `Protocal Schema`.
 
    **Validate:** There should be a prompt "Select a Language", and should see languages: `OpenAPI3`.
 
    ![alt text](./image/GeneratefromTypeSpec_SelectOpenAPILanguage.png)
 
-#### Step 5: Select a Language, the TypeSpec to OpenAPI generation is initiated at the back end.
+#### Step 6: Select a Language, the TypeSpec to OpenAPI generation is initiated at the back end.
 
    **Validate:** The result appears as a Notification in the bottom right corner, and generate the schema folder.
 
@@ -166,15 +172,17 @@ The TypeSpec file itself is not sufficient to generate OpenAPI 3. The conversion
 The service stub generation support will be PREVIEWED for 2 languages: `.NET` and `JavaScript`.
 > Note: Server Stub Emitter is currently under PREVIEW.
 
-##### Step1-3 are the same as Tast Case 2.
+#### Step 1 are the same as Tast Case 1.
 
-#### Step 4: Click `<PREVIEW> Server Stub`.
+#### Step 2-4 are the same as Tast Case 2.
+
+#### Step 5: Click `<PREVIEW> Server Stub`.
 
    **Validate:** There should be a prompt "Select a Language", and should see two languages: `DotNet`, `JavaScript`.
 
    ![alt text](./image/GeneratefromTypeSpec_SelectServerStubLanguage.png)
 
-#### Step 5: Select a Language, the TypeSpec to Server Stub generation is initiated at the back end.
+#### Step 6: Select a Language, the TypeSpec to Server Stub generation is initiated at the back end.
 
    **Validate:** The result appears as a Notification in the bottom right corner, and generate the server folder.
 
@@ -199,8 +207,7 @@ When an error is detected, it’s necessary to document the findings by using th
 
 | No | Title | Emitter Type | Language | Issue Description | Repro Steps | Expected Results | Actual Results | Comments |
 | ---------| :--: | :-: | :--: | :--: | :--: | :--: | :--: | :--: |
-| 1 | e.g. Generate client code from typespec failed | client code | Python |  |  |  |  | Issue link |
-| 2 | e.g. Create typespec project failed | N/A | N/A | Create project feature is not supported by the current TypeSpec Compiler (ver <= 0.63.0). Please upgrade TypeSpec Compiler and try again. | 1. Typing `>TypeSpec: Create TypeSpec Project` in the _Command Palette_. <br> 2. Select an empty folder as the root folder for the new TypeSpec project. <br> 3. Select a template. | There should be a prompt "Select a template", and should see four options: `Empty project`, `Generic REST API`, `TypeSpec Library (With TypeScript)`, `TypeSpec Emitter (With TypeScript)`. | Create project feature is not supported by the current TypeSpec Compiler (ver <= 0.63.0). Please upgrade TypeSpec Compiler and try again. | Issue link |
+| 1 | e.g. Create typespec project failed | N/A | N/A | Create project feature is not supported by the current TypeSpec Compiler (ver <= 0.63.0). Please upgrade TypeSpec Compiler and try again. | 1. Typing `>TypeSpec: Create TypeSpec Project` in the _Command Palette_. <br> 2. Select an empty folder as the root folder for the new TypeSpec project. <br> 3. Select a template. | There should be a prompt "Select a template", and should see four options: `Empty project`, `Generic REST API`, `TypeSpec Library (With TypeScript)`, `TypeSpec Emitter (With TypeScript)`. | Create project feature is not supported by the current TypeSpec Compiler (ver <= 0.63.0). Please upgrade TypeSpec Compiler and try again. | Issue link |
 
 ## Test Results Summary
 
@@ -208,9 +215,12 @@ The test results will be presented in the following form:
 
 | NO | Test Cases | Language | Result | Issues | Comments |
 |  --------------- | :-: | :--: | :--: | :--: | :--: |
-| 1 | Create TypeSpec Project from A Template | N/A | PASS | No issue | |
-| 3 | Generate Client Code from TypeSpec | Python | PASS | No issue |  |
-| 4 | Generate Client Code from TypeSpec | Java | FAIL | Issue links |  |
-| 5 | Generate Client Code from TypeSpec | .NET | FAIL | Issue links |  |
-| 6 | Generate Client Code from TypeSpec | JavaScript | PASS | No issue |   |
-| 7 | Generate Server Stub from TypeSpec | DotNet |  |  | Doing |
+| 1 | Create TypeSpec Project from A Template | N/A |  |  | |
+| 3 | Generate Client Code from TypeSpec | Python |  |  |  |
+| 4 | Generate Client Code from TypeSpec | Java |  |  |  |
+| 5 | Generate Client Code from TypeSpec | .NET |  |  |  |
+| 6 | Generate Client Code from TypeSpec | JavaScript |  |  |   |
+| 7 | Generate OpenAPI 3.x from TypeSpec | OpenAPI3 |  |  |  |
+| 7 | Generate Server Stub from TypeSpec | DotNet |  |  |  |
+| 7 | Generate Server Stub from TypeSpec | JavaScript |  |  |  |
+| 7 | Import TypeSpec from OpenAPI3 _(stretch goal for SE)_ | N/A |  |  |  |
