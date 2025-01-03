@@ -27,7 +27,22 @@ The TypeSpec Extension aims to provide end-to-end TypeSpec support for non-brand
 
 ## Test Steps
 
-### Step 1: Install the typespec extension.
+### Test Case 1: Create TypeSpec Project from A Template
+
+New TypeSpec projects can be created using a variety of templates for specific purposes. TypeSpec supports the following non-branded templates:
+
+* Empty Project
+* Generic REST API
+* TypeSpec Library (with TypeScript)
+* TypeSpec Emitter (with TypeScript)
+
+Selecting a template involves:
+
+* Installing required libraries
+* Initializing essential project files with a specified folder structure
+* Configuring output settings for a designated emission purpose
+
+#### Step 1: Install the typespec extension.
 
 _Option 1_. Install using .vsix file: 
    `Extension` -> `…` -> `Install form VSIX...`
@@ -43,24 +58,7 @@ _Option 2_. Install typespec with vscode extension marketplace:
    
    ![alt text](./image/InstallTypespec_ExtensionMarketplace.png)
 
-### Step 2: Create TypeSpec Project
-
-#### Test Case 1: Create TypeSpec Project from A Template
-
-New TypeSpec projects can be created using a variety of templates for specific purposes. TypeSpec supports the following non-branded templates:
-
-* Empty Project
-* Generic REST API
-* TypeSpec Library (with TypeScript)
-* TypeSpec Emitter (with TypeScript)
-
-Selecting a template involves:
-
-* Installing required libraries
-* Initializing essential project files with a specified folder structure
-* Configuring output settings for a designated emission purpose
-
-##### Step 1: Trigger create TypeSpec Project
+#### Step 2: Trigger create TypeSpec Project
 
 _Option 1_. Clicking “Create TypeSpec Project” button/link in the “No Folder Opened” View of Explore.
    
@@ -70,17 +68,17 @@ _Option 2_. Typing `> TypeSpec: Create TypeSpec Project` in the _Command Palette
    
    ![alt text](./image/TriggerCreateTypeSpecProject_CommandPalette.png)
 
-##### Step 2. Select an empty folder as the root folder for the new TypeSpec project.
+#### Step 3. Select an empty folder as the root folder for the new TypeSpec project.
    
    ![alt text](./image/CreateTypeSpecProject_SelectFolder.png)
 
-##### Step 3. Check if TypeSpec Compiler CLI is installed.
+#### Step 4. Check if TypeSpec Compiler CLI is installed.
 
 If the TypeSpec Compiler is not installed, the Quick Pick will initiate the installation of the TypeSpec Compiler. If TypeSpec Compiler is installed, Skip to the next step.
    
    ![alt text](./image/CreateTypeSpecProject_InstallTypeSpecCompiler.png)
 
-##### Step 4. After successfully installing TypeSpec Compiler, will go through the questions of `tsp init`.
+#### Step 5. After successfully installing TypeSpec Compiler, will go through the questions of `tsp init`.
    1. If the specified folder is not empty. If the folder is empty, skip to the next step.
 
    **Validate:** Will it appear: `Folder C:\xxx\xxx\xxx is not empty. Are you sure you want to initialize a new project here?`
@@ -93,14 +91,12 @@ If the TypeSpec Compiler is not installed, the Quick Pick will initiate the inst
 
    4. Choose whether to generate a .ignore file. `Y/N`
 
-### Step 3： Generate from TypeSpec
-
-#### Test Cases 1: Generate Client Code from TypeSpec
+### Test Cases 2: Generate Client Code from TypeSpec
 
 Generate client code from TypeSpec. In VS Code extension, we can complete code generation with step-by-step guidance.  
 TypeSpec Extension support will be extended to client code generation for first-class languages: `.NET`, `Python`, `Java`, and `JavaScript`.
 
-##### Install the required tools when Generate Client Code
+#### Install the required tools when Generate Client Code
 
 * Install required SDK/runtime for executing the specified language
 * .NET 8.0 SDK or above
@@ -108,7 +104,7 @@ TypeSpec Extension support will be extended to client code generation for first-
 * Python 3.8 or above
 * Node.js 20 LTS or above
 
-##### Step 1: Trigger generate from TypeSpec
+#### Step 1: Trigger generate from TypeSpec
 
 Generation from a TypeSpec can be triggered in two ways:
 
@@ -120,85 +116,82 @@ _Option 2_. Typing `>TypeSpec: Generate from TypeSpec` in the _Command Palette_ 
    
    ![alt text](./image/TriggerGeneratefromTypeSpec_CommandPalette.png)
 
-##### Step 2: Click the command `TypeSpec: Generate from TypeSpec`, and choose a project.
+#### Step 2: Click the command `TypeSpec: Generate from TypeSpec`, and choose a project.
 
    **Validate:** There should be a prompt "Select a Typespec Project".
 
    ![alt text](./image/GeneratefromTypeSpec_SelectTypespecProject.png)
 
-##### Step 3: Select an Emitter Type.
+#### Step 3: Select an Emitter Type.
 
    **Validate:** There should be a prompt "Select an Emitter Type", and should see three emitter types: `Client Code`, `<PREVIEW> Server Stub`, `Protocal Schema`.
 
    ![alt text](./image/GeneratefromTypeSpec_SelectEmitter_client.png)
 
-##### Step 4: Click `Client Code`.
+#### Step 4: Click `Client Code`.
 
    **Validate:** There should be a prompt "Select a Language", and should see four languages: `DotNet`, `Java`, `JavaScript`, `Python`.
 
    ![alt text](./image/GeneratefromTypeSpec_SelectClientLanguage.png)
 
-##### Step 5: Select a Language, the TypeSpec to client code generation is initiated at the back end.
+#### Step 5: Select a Language, the TypeSpec to client code generation is initiated at the back end.
 
    **Validate:** The result appears as a Notification in the bottom right corner, and generate the client folder.
 
    ![alt text](./image/GeneratefromTypeSpec_GenerateClientResult_prompt.png)
    ![alt text](./image/GeneratefromTypeSpec_GenerateClientResult_Folder.png)
 
-#### Test Cases 2: Generate OpenAPI 3.x from TypeSpec
+### Test Cases 3: Generate OpenAPI 3.x from TypeSpec
 
 Emit OpenAPI3 from TypeSpec to automate API-related tasks: generate API documentation, test API, etc.
 The TypeSpec file itself is not sufficient to generate OpenAPI 3. The conversion process will always reference the entry point (main.tsp) of the TypeSpec build, which includes the main definitions of models, services, and operations.
 
-##### Step1-3 are the same as Tast Case 1.
+#### Step1-3 are the same as Tast Case 2.
 
-##### Step 4: Click `Protocal Schema`.
+#### Step 4: Click `Protocal Schema`.
 
    **Validate:** There should be a prompt "Select a Language", and should see languages: `OpenAPI3`.
 
    ![alt text](./image/GeneratefromTypeSpec_SelectOpenAPILanguage.png)
 
-##### Step 5: Select a Language, the TypeSpec to OpenAPI generation is initiated at the back end.
+#### Step 5: Select a Language, the TypeSpec to OpenAPI generation is initiated at the back end.
 
    **Validate:** The result appears as a Notification in the bottom right corner, and generate the schema folder.
 
    ![alt text](./image/GeneratefromTypeSpec_GenerateOpenAPIResult_prompt.png)
    ![alt text](./image/GeneratefromTypeSpec_GenerateOpenAPIResult_Folder.png)
 
-#### Test Cases 3: Generate Server Stub from TypeSpec
+### Test Cases 4: Generate Server Stub from TypeSpec
 
 The service stub generation support will be PREVIEWED for 2 languages: `.NET` and `JavaScript`.
 > Note: Server Stub Emitter is currently under PREVIEW.
 
-##### Step1-3 are the same as Tast Case 1.
+##### Step1-3 are the same as Tast Case 2.
 
-##### Step 4: Click `<PREVIEW> Server Stub`.
+#### Step 4: Click `<PREVIEW> Server Stub`.
 
    **Validate:** There should be a prompt "Select a Language", and should see two languages: `DotNet`, `JavaScript`.
 
    ![alt text](./image/GeneratefromTypeSpec_SelectServerStubLanguage.png)
 
-##### Step 5: Select a Language, the TypeSpec to Server Stub generation is initiated at the back end.
+#### Step 5: Select a Language, the TypeSpec to Server Stub generation is initiated at the back end.
 
    **Validate:** The result appears as a Notification in the bottom right corner, and generate the server folder.
 
    ![alt text](./image/GeneratefromTypeSpec_GenerateServerStubResult_prompt.png)
    ![alt text](./image/GeneratefromTypeSpec_GenerateServerStubResult_Folder.png)
    
-
-### Step 5: Import TypeSpec from OpenAPI3 _(stretch goal for SE)_
+### Test Cases 5: Import TypeSpec from OpenAPI3 _(stretch goal for SE)_
 
 With the TypeSpec emitter for OpenAPI3, users can import a TypeSpec file from a designated OpenAPI3 document. While it is possible to repeatedly convert OpenAPI3 to TypeSpec, we do not recommend this approach.
 
-#### Test Cases 1: Import TypeSpec from OpenAPI3
+#### Step 1: "Import TypeSpec from OpenAPI 3.0" from the right-click context menu of a .tsp file.
 
-##### Step 1: "Import TypeSpec from OpenAPI 3.0" from the right-click context menu of a .tsp file.
+#### Step 2: Identify the project folder where you will place the TypeSpec file converted from the specified OpenAPI3 specification.
 
-##### Step 2: Identify the project folder where you will place the TypeSpec file converted from the specified OpenAPI3 specification.
+#### Step 3: Specify the OpenAPI3 specification to convert.
 
-##### Step 3: Specify the OpenAPI3 specification to convert.
-
-##### Step 4: Verify that @typespec/http and @typespec/openapi3 are installed.
+#### Step 4: Verify that @typespec/http and @typespec/openapi3 are installed.
 
 ## Issue Report
 
