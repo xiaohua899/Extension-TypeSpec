@@ -213,11 +213,11 @@ When an error is detected, it’s necessary to document the findings by using th
 
 The test results will be presented in the following form:
 
-| NO | Test Cases | Language | Result | Issues  | Comments |
+| NO | Test Cases | Language | Result | Issues | Comments |
 |  --------------- | :-: | :--: | :--: | :--: | :--: |
 | 1 | Create TypeSpec Project from A Template | N/A | PASS | No issue | |
 | 3 | Generate Client Code from TypeSpec | Python | PASS | No issue |  |
 | 4 | Generate Client Code from TypeSpec | Java | FAIL | Issue links |  |
 | 5 | Generate Client Code from TypeSpec | .NET | FAIL | Issue links |  |
 | 6 | Generate Client Code from TypeSpec | JavaScript | PASS | No issue |   |
-| 7 | Generate Server Stub steps | DotNet |  |  |  |
+| 7 | Generate Server Stub from TypeSpec | DotNet |  |  | Doing |
