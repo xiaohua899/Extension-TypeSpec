@@ -258,6 +258,6 @@ The test results will be presented in the following form:
 
 | NO | User Case | Language | Result | Issues& PRs | Status | Owner |
 |  --------------- | :-: | :--: | :--: | :--: | :--: | :--: |
-| 1 | Generate Client Code from TypeSpec | Python | pass | Issue links/PR links | Done | xxx |
+| 1 | Generate Client Code from TypeSpec | Python | pass |  | Done | xxx |
 | 2 |  | Java | Fail | Issue links/PR links | Done | xxx |
 | 3 | Generate Server Stub steps | DotNet |  |  | Doing | xxx |
