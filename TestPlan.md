@@ -102,7 +102,7 @@ TypeSpec Extension support will be extended to client code generation for first-
 
 Install required SDK/runtime for executing the specified language:
 * [.NET 8.0 SDK](https://dotnet.microsoft.com/en-us/download)
-* Java 11 or above, and Maven
+* [Java 11 or above](https://www.oracle.com/java/technologies/downloads/), and [Maven](https://maven.apache.org/download.cgi)
 * [Python 3.8+](https://www.python.org/downloads/)
 * [Node.js 20+](https://nodejs.org/download/)
 
