@@ -225,6 +225,6 @@ The test results will be presented in the following form:
 | 5 | Generate Client Code from TypeSpec | windows/linux | .NET |  |  |  |
 | 6 | Generate Client Code from TypeSpec | windows/linux | JavaScript |  |  |   |
 | 7 | Generate OpenAPI 3.x from TypeSpec | windows/linux | OpenAPI3 |  |  |  |
-| 7 | Generate Server Stub from TypeSpec | windows/linux | DotNet |  |  |  |
-| 7 | Generate Server Stub from TypeSpec | windows/linux | JavaScript |  |  |  |
-| 7 | Import TypeSpec from OpenAPI3 _(stretch goal for SE)_ | windows/linux | N/A |  |  |  |
+| 8 | Generate Server Stub from TypeSpec | windows/linux | DotNet |  |  |  |
+| 9 | Generate Server Stub from TypeSpec | windows/linux | JavaScript |  |  |  |
+| 10 | Import TypeSpec from OpenAPI3 _(stretch goal for SE)_ | windows/linux | N/A |  |  |  |
