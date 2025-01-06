@@ -1,4 +1,4 @@
-# TypeSpec Extension for Visual Studio Code
+# VS Code TypeSpec Extension Test Plan
 
 ## Test Environment
 
@@ -81,11 +81,11 @@ If the TypeSpec Compiler is not installed, the Quick Pick will initiate the inst
 #### Step 5. After successfully installing TypeSpec Compiler, will go through the questions of `tsp init`.
    1. If the specified folder is not empty. If the folder is empty, skip to the next step.
 
-   **Validate:** Will it appear: `Folder C:\xxx\xxx\xxx is not empty. Are you sure you want to initialize a new project here?`
+   &emsp;&emsp;**Validate:** Will it appear: `Folder C:\xxx\xxx\xxx is not empty. Are you sure you want to initialize a new project here?`
 
    2. Select a template.
 
-   **Validate:** There should be a prompt "Select a template", and should see four options: `Empty project`, `Generic REST API`, `TypeSpec Library (With TypeScript)`, `TypeSpec Emitter (With TypeScript)`.
+   &emsp;&emsp;**Validate:** There should be a prompt "Select a template", and should see four options: `Empty project`, `Generic REST API`, `TypeSpec Library (With TypeScript)`, `TypeSpec Emitter (With TypeScript)`.
 
    3. Input project name.
 
@@ -150,6 +150,8 @@ _Option 2_. Typing `>TypeSpec: Generate from TypeSpec` in the _Command Palette_ 
 Emit OpenAPI3 from TypeSpec to automate API-related tasks: generate API documentation, test API, etc.
 The TypeSpec file itself is not sufficient to generate OpenAPI 3. The conversion process will always reference the entry point (main.tsp) of the TypeSpec build, which includes the main definitions of models, services, and operations.
 
+**Important: There must be at least one TypeSpec project in the project folder.**
+
 #### Step 1 are the same as Tast Case 1.
 
 #### Step 2-4 are the same as Tast Case 2.
@@ -171,6 +173,8 @@ The TypeSpec file itself is not sufficient to generate OpenAPI 3. The conversion
 
 The service stub generation support will be PREVIEWED for 2 languages: `.NET` and `JavaScript`.
 > Note: Server Stub Emitter is currently under PREVIEW.
+
+**Important: There must be at least one TypeSpec project in the project folder.**
 
 #### Step 1 are the same as Tast Case 1.
 
@@ -213,14 +217,14 @@ When an error is detected, it’s necessary to document the findings by using th
 
 The test results will be presented in the following form:
 
-| NO | Test Cases | Language | Result | Issues | Comments |
-|  --------------- | :-: | :--: | :--: | :--: | :--: |
-| 1 | Create TypeSpec Project from A Template | N/A |  |  | |
-| 3 | Generate Client Code from TypeSpec | Python |  |  |  |
-| 4 | Generate Client Code from TypeSpec | Java |  |  |  |
-| 5 | Generate Client Code from TypeSpec | .NET |  |  |  |
-| 6 | Generate Client Code from TypeSpec | JavaScript |  |  |   |
-| 7 | Generate OpenAPI 3.x from TypeSpec | OpenAPI3 |  |  |  |
-| 7 | Generate Server Stub from TypeSpec | DotNet |  |  |  |
-| 7 | Generate Server Stub from TypeSpec | JavaScript |  |  |  |
-| 7 | Import TypeSpec from OpenAPI3 _(stretch goal for SE)_ | N/A |  |  |  |
+| NO | Test Cases | Platform | Language | Result | Issues | Comments |
+|  --------------- | :-: |:-: | :--: | :--: | :--: | :--: |
+| 1 | Create TypeSpec Project from A Template | windows/linux | N/A |  |  | |
+| 3 | Generate Client Code from TypeSpec | windows/linux | Python |  |  |  |
+| 4 | Generate Client Code from TypeSpec | windows/linux | Java |  |  |  |
+| 5 | Generate Client Code from TypeSpec | windows/linux | .NET |  |  |  |
+| 6 | Generate Client Code from TypeSpec | windows/linux | JavaScript |  |  |   |
+| 7 | Generate OpenAPI 3.x from TypeSpec | windows/linux | OpenAPI3 |  |  |  |
+| 7 | Generate Server Stub from TypeSpec | windows/linux | DotNet |  |  |  |
+| 7 | Generate Server Stub from TypeSpec | windows/linux | JavaScript |  |  |  |
+| 7 | Import TypeSpec from OpenAPI3 _(stretch goal for SE)_ | windows/linux | N/A |  |  |  |
