@@ -3,7 +3,7 @@
 ## Test Environment
 
 * OS : Windows or Linux
-* Language : Python, Java, JavasSript, .NET
+* Language : Python, Java, JavaScript, .NET
 
 > Note: The extension should support all test cases in VS Code for Windows and Linux. Mac support is a stretch goal for Selenium semester.
 
@@ -51,12 +51,12 @@ _Option 1_. Install using .vsix file:
 
    Find the .vsix file you want to install locally.
    
-   ![alt text](./image/InstallTypeSpec_SelectVSIXFile.png)
+   ![alt text](./image/InstallTypeSpec_SelectVSIXFileTest.png)
 
 _Option 2_. Install typespec with vscode extension marketplace:
    `Extension` -> input `TypeSpec for VS Code` -> `Install`
    
-   ![alt text](./image/InstallTypespec_ExtensionMarketplaceTest.png)
+   ![alt text](./image/InstallTypespec_ExtensionMarketplaceTest01.png)
 
 #### Step 2: Trigger create TypeSpec Project
 
@@ -70,7 +70,7 @@ _Option 2_. Typing `> TypeSpec: Create TypeSpec Project` in the _Command Palette
 
 #### Step 3. Select an empty folder as the root folder for the new TypeSpec project.
    
-   ![alt text](./image/CreateTypeSpecProject_SelectFolder.png)
+   ![alt text](./image/CreateTypeSpecProject_SelectFolderTest.png)
 
 #### Step 4. Check if TypeSpec Compiler CLI is installed.
 
@@ -82,14 +82,26 @@ If the TypeSpec Compiler is not installed, the Quick Pick will initiate the inst
    1. If the specified folder is not empty. If the folder is empty, skip to the next step.
 
    &emsp;&emsp;**Validate:** Will it appear: `Folder C:\xxx\xxx\xxx is not empty. Are you sure you want to initialize a new project here?`
+   
+   ![alt text](./image/CreateTypeSpecProject_VerifyFolderIsEmpty.png）
 
    2. Select a template.
 
    &emsp;&emsp;**Validate:** There should be a prompt "Select a template", and should see four options: `Empty project`, `Generic REST API`, `TypeSpec Library (With TypeScript)`, `TypeSpec Emitter (With TypeScript)`.
 
+   ![alt text](./image/CreateTypeSpecProject_SelectTemplate.png）
+
    3. Input project name.
 
+      ![alt text](./image/CreateTypeSpecProject_InputProjectName.png)
+
    4. Choose whether to generate a .ignore file.
+
+      ![alt text](./image/CreateTypeSpecProject_Generate_ignoreFile.png)
+
+   6. Select libraries to update.
+
+      ![alt text](./image/CreateTypeSpecProject_InstallOrUpdateLibraries.png)
 
 ### Test Cases 2: Generate Client Code from TypeSpec
 
