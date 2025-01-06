@@ -54,9 +54,9 @@ _Option 1_. Install using .vsix file:
    ![alt text](./image/InstallTypeSpec_SelectVSIXFile.png)
 
 _Option 2_. Install typespec with vscode extension marketplace:
-   `Extension` -> input `typespec` -> Install
+   `Extension` -> input `TypeSpec for VS Code` -> `Install`
    
-   ![alt text](./image/InstallTypespec_ExtensionMarketplace.png)
+   ![alt text](./image/InstallTypespec_ExtensionMarketplaceTest.png)
 
 #### Step 2: Trigger create TypeSpec Project
 
@@ -89,7 +89,7 @@ If the TypeSpec Compiler is not installed, the Quick Pick will initiate the inst
 
    3. Input project name.
 
-   4. Choose whether to generate a .ignore file. `Y/N`
+   4. Choose whether to generate a .ignore file.
 
 ### Test Cases 2: Generate Client Code from TypeSpec
 
@@ -106,7 +106,7 @@ Install required SDK/runtime for executing the specified language:
 * [Python 3.8+](https://www.python.org/downloads/)
 * [Node.js 20+](https://nodejs.org/download/)
 
-#### Step 1 are the same as Tast Case 1.
+#### Step 1 are the same as [Tast Case 1](#test-case-1-create-typespec-project-from-a-template).
 
 #### Step 2: Trigger generate from TypeSpec
 
@@ -152,9 +152,9 @@ The TypeSpec file itself is not sufficient to generate OpenAPI 3. The conversion
 
 **Important: There must be at least one TypeSpec project in the project folder.**
 
-#### Step 1 are the same as Tast Case 1.
+#### Step 1 are the same as [Tast Case 1](#test-case-1-create-typespec-project-from-a-template).
 
-#### Step 2-4 are the same as Tast Case 2.
+#### Step 2-4 are the same as [Tast Case 2](#test-cases-2-generate-client-code-from-typespec).
 
 #### Step 5: Click `Protocal Schema`.
 
@@ -176,9 +176,9 @@ The service stub generation support will be PREVIEWED for 2 languages: `.NET` an
 
 **Important: There must be at least one TypeSpec project in the project folder.**
 
-#### Step 1 are the same as Tast Case 1.
+#### Step 1 are the same as [Tast Case 1](#test-case-1-create-typespec-project-from-a-template).
 
-#### Step 2-4 are the same as Tast Case 2.
+#### Step 2-4 are the same as [Tast Case 2](#test-cases-2-generate-client-code-from-typespec).
 
 #### Step 5: Click `<PREVIEW> Server Stub`.
 
@@ -195,7 +195,7 @@ The service stub generation support will be PREVIEWED for 2 languages: `.NET` an
    
 ### Test Cases 5: Import TypeSpec from OpenAPI3 _(stretch goal for SE)_
 
-With the TypeSpec emitter for OpenAPI3, users can import a TypeSpec file from a designated OpenAPI3 document. While it is possible to repeatedly convert OpenAPI3 to TypeSpec, we do not recommend this approach.
+With the TypeSpec emitter for OpenAPI3, users can import a TypeSpec file from a designated OpenAPI3 document. While it is possible to repeatedly convert OpenAPI3 to TypeSpec.
 
 #### Step 1: "Import TypeSpec from OpenAPI 3.0" from the right-click context menu of a .tsp file.
 
