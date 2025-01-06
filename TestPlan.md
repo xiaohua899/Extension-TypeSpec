@@ -83,13 +83,13 @@ If the TypeSpec Compiler is not installed, the Quick Pick will initiate the inst
 
    &emsp;&emsp;**Validate:** Will it appear: `Folder C:\xxx\xxx\xxx is not empty. Are you sure you want to initialize a new project here?`
    
-   ![alt text](./image/CreateTypeSpecProject_VerifyFolderIsEmpty.png)
+   &emsp;&emsp;![alt text](./image/CreateTypeSpecProject_VerifyFolderIsEmpty.png)
 
    2. Select a template.
 
    &emsp;&emsp;**Validate:** There should be a prompt "Select a template", and should see four options: `Empty project`, `Generic REST API`, `TypeSpec Library (With TypeScript)`, `TypeSpec Emitter (With TypeScript)`.
    
-   ![alt text](./image/CreateTypeSpecProject_SelectTemplate.png)
+   &emsp;&emsp;![alt text](./image/CreateTypeSpecProject_SelectTemplate.png)
 
    3. Input project name.
 
