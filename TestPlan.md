@@ -219,12 +219,12 @@ The test results will be presented in the following form:
 
 | NO | Test Cases | Platform | Language | Result | Issues | Comments |
 |  --------------- | :-: |:-: | :--: | :--: | :--: | :--: |
-| 1 | Create TypeSpec Project from A Template | windows/linux | N/A |  |  | |
-| 3 | Generate Client Code from TypeSpec | windows/linux | Python |  |  |  |
-| 4 | Generate Client Code from TypeSpec | windows/linux | Java |  |  |  |
-| 5 | Generate Client Code from TypeSpec | windows/linux | .NET |  |  |  |
-| 6 | Generate Client Code from TypeSpec | windows/linux | JavaScript |  |  |   |
-| 7 | Generate OpenAPI 3.x from TypeSpec | windows/linux | OpenAPI3 |  |  |  |
-| 8 | Generate Server Stub from TypeSpec | windows/linux | DotNet |  |  |  |
-| 9 | Generate Server Stub from TypeSpec | windows/linux | JavaScript |  |  |  |
-| 10 | Import TypeSpec from OpenAPI3 _(stretch goal for SE)_ | windows/linux | N/A |  |  |  |
+| 1 | Create TypeSpec Project from A Template | Windows/Linux | N/A |  |  |  |
+| 3 | Generate Client Code from TypeSpec | Windows/Linux | Python |  |  |  |
+| 4 | Generate Client Code from TypeSpec | Windows/Linux | Java |  |  |  |
+| 5 | Generate Client Code from TypeSpec | Windows/Linux | .NET |  |  |  |
+| 6 | Generate Client Code from TypeSpec | Windows/Linux | JavaScript |  |  |  |
+| 7 | Generate OpenAPI 3.x from TypeSpec | Windows/Linux | OpenAPI3 |  |  |  |
+| 8 | Generate Server Stub from TypeSpec | Windows/Linux | DotNet |  |  |  |
+| 9 | Generate Server Stub from TypeSpec | Windows/Linux | JavaScript |  |  |  |
+| 10 | Import TypeSpec from OpenAPI3 _(stretch goal for SE)_ | Windows/Linux | N/A |  |  |  |
