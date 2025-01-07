@@ -152,10 +152,11 @@ _Option 2_. Typing `>TypeSpec: Generate from TypeSpec` in the _Command Palette_ 
 
 #### Step 6: Select a Language, the TypeSpec to client code generation is initiated at the back end.
 
-   **Validate:** The result appears as a Notification in the bottom right corner, and generate the client folder.
+   **Validate:** The emitter package is already installed and the client folder is generated. The result appears in the lower right corner as a notification.
 
-   ![alt text](./image/GeneratefromTypeSpec_GenerateClientResult_prompt.png)
-   ![alt text](./image/GeneratefromTypeSpec_GenerateClientResult_Folder.png)
+   ![alt text](./image/GenerateClientCode_VerifyInstallEmitter.png)
+   ![alt text](./image/GenerateClientCode_VerifyGenerateSuccessful.png)
+   ![alt text](./image/GenerateClientCode_VerifyGenerateCodeSucceeded.png)
 
 ### Test Cases 3: Generate OpenAPI 3.x from TypeSpec
 
