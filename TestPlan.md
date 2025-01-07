@@ -72,7 +72,7 @@ _Option 2_. Typing `> TypeSpec: Create TypeSpec Project` in the _Command Palette
    
    ![alt text](./image/CreateTypeSpecProject_SelectFolderTest.png)
 
-#### Step 4. Check if TypeSpec Compiler CLI is installed.
+#### Step 4. Check if TypeSpec Compiler CLI is installed (optional).
 
 If the TypeSpec Compiler is not installed, the Quick Pick will initiate the installation of the TypeSpec Compiler. If TypeSpec Compiler is installed, Skip to the next step.
    
