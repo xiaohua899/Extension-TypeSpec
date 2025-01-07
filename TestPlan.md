@@ -99,7 +99,7 @@ If the TypeSpec Compiler is not installed, the Quick Pick will initiate the inst
 
       ![alt text](./image/CreateTypeSpecProject_Generate_ignoreFile.png)
 
-   6. Select libraries to update.
+   5. Select libraries to update.
 
       ![alt text](./image/CreateTypeSpecProject_InstallOrUpdateLibraries.png)
 
